@@ -1,6 +1,6 @@
 public class UF
 {
-	private int[] id;
+	public int[] id;
 	private int count;
 	private int[] size;
 
@@ -41,10 +41,17 @@ public class UF
 
 	public int find(int p)
 	{
+		int[] compression_node = new int[31];
+		int compression_node_index = 0;
 		int temp_id_p = p;
 		while (temp_id_p != id[temp_id_p])
 		{
+			compression_node[compression_node_index++] = temp_id_p;
 			temp_id_p = id[temp_id_p];
+		}
+		for (int i = 0; i < compression_node_index; i++)
+		{
+			id[compression_node[i]] = temp_id_p;
 		}
 		return temp_id_p;
 	}

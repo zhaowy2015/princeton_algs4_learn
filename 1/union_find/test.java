@@ -17,6 +17,11 @@ public class test
 			//StdOut.println(p + " " + q);
 		}
 		StdOut.println(uf.count() + "components");
+
+		/*
+		for (int i = 0; i < uf.id.length; i++)
+			StdOut.println(uf.id[i]);
+		*/
 		
 		
 	}
